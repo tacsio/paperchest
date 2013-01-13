@@ -23,6 +23,16 @@ end
 gem 'jquery-rails'
 gem 'therubyracer'
 
+
+group :development, :test do
+  # To use debugger
+  gem 'debugger'
+
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -35,5 +45,4 @@ gem 'therubyracer'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'debugger'
+
