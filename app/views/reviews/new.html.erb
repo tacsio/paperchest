@@ -1,0 +1,27 @@
+<!-- <div id="modal-review" class="modal hide fade" role='dialog' aria-labelledby='New review' aria-hidden='true'>
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h3 id="labelModal">Create new review</h3>
+  </div>
+  <div class="modal-body">
+    <%= form_for([@paper, Review.new]) do |f| %>
+      <div class="field">
+        <%= f.text_area :text %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      <%= f.submit :class => 'btn btn-small' %>
+    </div>
+  <% end %>
+</div> -->
+
+<div id="modal-review">
+  <h3 id="labelModal">Create new review</h3>
+  <%= form_for([@paper, Review.new]) do |f| %>
+    <div class="field">
+      <%= f.text_area :text %>
+    </div>
+    <%= f.submit :class => 'btn btn-small' %>
+  <% end %>
+</div>

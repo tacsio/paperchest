@@ -21,14 +21,16 @@
   </div>
   <div class="field">
     <%= f.label :citation %><br />
-    <%= f.text_field :citation %>
+    <%= f.text_area :citation %>
   </div>
 
   <div class="field">
     <%= f.label 'Paper file' %>
     <%= f.file_field :file %>
   </div>
-  <div class="actions">
+  <hr>
+  <div class="btn-group">
     <%= f.submit class: 'btn btn-small btn-primary' %>
+    <%= link_to 'Back', papers_path, class: 'btn btn-small' %>
   </div>
 <% end %>

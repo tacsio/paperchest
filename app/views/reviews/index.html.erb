@@ -1,11 +1,16 @@
 <h1><small> Reviews </small></h1>
-
-<ul>
-  <% @reviews.each do |review| %>
-    <li>
-      <%= review.text %>
-      <%= link_to 'Edit', edit_paper_review_path(review.paper, review) %>
-      <%= link_to 'Destroy', [review.paper, review], method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
-</ul>
+<% @reviews.each do |review| %>
+  <div id=<%= review.id %>>
+    <div class="row review-item">
+      <span class='span8'>
+        <%= review.text %>
+      </span>
+      <span class="span3">
+        <div class="btn-group">
+          <%= link_to 'Edit', edit_paper_review_path(review.paper, review), class: 'btn btn-info' %>
+          <%= link_to 'Destroy', [review.paper, review], remote: true, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </div>
+      </span>
+    </div>
+  </div>
+<% end %>
