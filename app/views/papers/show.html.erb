@@ -13,6 +13,10 @@
 <h4>Citation:</h4>
 <p><%= @paper.citation %></p>
 
+<h4>Download this paper:</h4>
+<p><%= link_to "Download here", @paper.file.url(:download => true) %></p>
+
+<hr>
 <div class="btn-group">
   <%= link_to 'Edit', edit_paper_path(@paper), class: 'btn btn-info' %>
   <%= link_to 'Destroy', @paper, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %>

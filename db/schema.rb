@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113230208) do
+ActiveRecord::Schema.define(:version => 20130117223658) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -23,8 +23,12 @@ ActiveRecord::Schema.define(:version => 20130113230208) do
     t.string   "title"
     t.text     "abstract"
     t.string   "citation"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "reviews", :force => true do |t|
