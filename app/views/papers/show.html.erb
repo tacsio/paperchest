@@ -1,20 +1,37 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="text-info"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @paper.title %>
-</p>
+<h2><%= @paper.title %></h2>
 
-<p>
-  <b>Abstract:</b>
-  <%= @paper.abstract %>
-</p>
+  <h4>Abstract:</h4>
+  <p><%= @paper.abstract %></p>
 
-<p>
-  <b>Citation:</b>
-  <%= @paper.citation %>
-</p>
-
+  <h4>Citation:</h4>
+  <p><%= @paper.citation %></p>
 
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
+<%= link_to 'Destroy', @paper, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', papers_path %>
+
+<% unless @paper.reviews.empty? %>
+  <div class="reviews">
+    <%= render template: 'reviews/index' %>
+  </div>
+<% end %>
+
+<div class="new-review">
+  <h1><small>Create new review</small></h1>
+  <%= form_for([@paper, Review.new]) do |f| %>
+    <div class="field">
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit :class => 'btn btn-small' %>
+    </div>
+  <% end %>
+</div>
+
+
+
+

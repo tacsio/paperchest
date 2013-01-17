@@ -14,6 +14,7 @@ class PapersController < ApplicationController
   # GET /papers/1.json
   def show
     @paper = Paper.find(params[:id])
+    @reviews = @paper.reviews
 
     respond_to do |format|
       format.html # show.html.erb

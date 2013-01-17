@@ -1,6 +1,10 @@
 Paperchest::Application.routes.draw do
-  resources :papers
 
+  root :to => "papers#index"
+
+  resources :papers do
+    resources :reviews
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
