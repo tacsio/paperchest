@@ -11,9 +11,6 @@ class ReviewsController < ApplicationController
   def new
   end
 
-  def edit
-  end
-
   def create
     @paper = Paper.find(params[:paper_id])
     @review = Review.new(params[:review]) do |r|
@@ -27,6 +24,14 @@ class ReviewsController < ApplicationController
         format.html { render action: "new" }
       end
     end
+  end
+
+  def edit
+    #TODO
+  end
+
+  def update
+    #TODO
   end
 
   def destroy
