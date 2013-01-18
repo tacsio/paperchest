@@ -31,6 +31,10 @@
   <hr>
   <div class="btn-group">
     <%= f.submit class: 'btn btn-small btn-primary' %>
-    <%= link_to 'Back', papers_path, class: 'btn btn-small' %>
+    <% if @paper.id %>
+      <%= link_to 'Back', paper_path(@paper), class: 'btn btn-small' %>
+    <% else %>
+      <%= link_to 'Back', papers_path, class: 'btn btn-small' %>
+    <% end %>
   </div>
 <% end %>
