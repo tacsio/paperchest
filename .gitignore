@@ -17,3 +17,6 @@
 *.swp
 .sass-cache/*
 *.swo
+
+*/database.yml
+dropbox.yml

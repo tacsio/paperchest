@@ -11,7 +11,7 @@
 <p><%= @paper.abstract %></p>
 
 <h4>Citation:</h4>
-<p><%= @paper.citation %></p>
+<%= simple_format @paper.citation %>
 
 <div class="btn-group">
   <%= link_to 'Edit', edit_paper_path(@paper), class: 'btn' %>

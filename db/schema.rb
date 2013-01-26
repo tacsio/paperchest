@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117223658) do
+ActiveRecord::Schema.define(:version => 20130120182653) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130117223658) do
   create_table "papers", :force => true do |t|
     t.string   "title"
     t.text     "abstract"
-    t.string   "citation"
+    t.text     "citation"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "file_file_name"
