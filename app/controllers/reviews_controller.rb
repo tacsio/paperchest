@@ -19,6 +19,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
+        @paper.touch
         format.html { redirect_to @paper, notice: 'Review was successfully created.'}
       else
         format.html { render action: "new" }

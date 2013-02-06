@@ -2,7 +2,7 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
-    @papers = Paper.all
+    @papers = Paper.all(order: 'updated_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
