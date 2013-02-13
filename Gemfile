@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'mysql2'
 gem 'devise'
+gem 'json', '~> 1.7.7'
 
 gem "paperclip"
 gem "paperclip-dropbox"
