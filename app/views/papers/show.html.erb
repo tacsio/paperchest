@@ -7,6 +7,7 @@
 
 <h2><%= @paper.title %></h2>
 
+
 <h4>Abstract:</h4>
 <p><%= @paper.abstract %></p>
 
@@ -14,6 +15,9 @@
   <h4>Citation:</h4>
   <%= simple_format @paper.citation %>
 <% end %>
+
+<h4>Tags:</h4>
+<p><%= raw @paper.tag_list.map { |t| link_to t, tag_path(t) }.join(", ") %></p>
 
 <div class="btn-group">
   <%= link_to 'Edit', edit_paper_path(@paper), class: 'btn' %>

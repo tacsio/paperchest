@@ -2,6 +2,7 @@ Paperchest::Application.routes.draw do
 
   root :to => "papers#index"
 
+	get 'tags/:tag', to: 'papers#index', as: :tag
   resources :papers do
     resources :reviews
   end

@@ -12,15 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
+	<div class="field">
+		<%= f.label :tag_list, "Tags (separated by commas)" %>
+		<%= f.text_field :tag_list %>
+	</div>
   <div class="field">
-    <%= f.label :abstract %><br />
+    <%= f.label :abstract %>
     <%= f.text_area :abstract %>
   </div>
   <div class="field">
-    <%= f.label :citation %><br />
+    <%= f.label :citation %>
     <%= f.text_area :citation %>
   </div>
 

@@ -1,8 +1,9 @@
 class Paper < ActiveRecord::Base
-  attr_accessible :abstract, :citation, :title, :file
+  attr_accessible :abstract, :citation, :title, :file, :tag_list
 
   has_many :reviews, :dependent => :destroy
-  has_many :tags, :dependent => :destroy
+
+	acts_as_taggable
 
   has_attached_file :file,
     :storage => :dropbox,

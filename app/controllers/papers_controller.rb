@@ -2,7 +2,11 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
-    @papers = Paper.all(order: 'updated_at DESC')
+		if params[:tag]
+			@papers = Paper.tagged_with(params[:tag])
+		else
+    	@papers = Paper.all(order: 'updated_at DESC')
+		end
 
     respond_to do |format|
       format.html # index.html.erb

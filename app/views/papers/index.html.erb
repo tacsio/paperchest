@@ -1,9 +1,19 @@
+<h1>Tag cloud</h1>
+<div id="tag_cloud">
+	<% tag_cloud Paper.tag_counts, %w{s m l} do |tag, css_class| %>
+		<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+	<% end %>
+</div>
+
+<hr/>
+
 <h1>Listing papers</h1>
 
 <table class="table table-bordered table-striped">
   <tr>
     <th class="title">Title</th>
     <th>Abstract</th>
+		<th>Tags </th>
     <th>Reviews</th>
   </tr>
 
@@ -11,6 +21,7 @@
   <tr>
     <td><%= link_to paper.title, paper %></td>
     <td><%= paper.abstract %></td>
+		<td><%= raw paper.tag_list.map { |t| link_to t, tag_path(t) }.join(", ") %> </td>
     <td style="text-align: center"><%= paper.reviews.count %></td>
   </tr>
 <% end %>
