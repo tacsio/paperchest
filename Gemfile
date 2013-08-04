@@ -29,11 +29,12 @@ end
 gem 'jquery-rails'
 gem 'therubyracer'
 
-
-group :development, :test do
+group :development do
   # To use debugger
   gem 'debugger'
+end
 
+group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
